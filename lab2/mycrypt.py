@@ -9,8 +9,8 @@ def encode(s):
     if len(s) > 1000:
         raise ValueError
     for c in s:
-        #not allowed letters 
-        if c in ['å', 'ä', 'ö']:
+        #if å, ä, ö or +
+        if c in ['å', 'ä', 'ö', '+']:
             raise ValueError
         if c.isalpha():
             if c.islower():
@@ -21,9 +21,7 @@ def encode(s):
             crypted+=codecs.encode(c,'rot13')
         elif c in digitmapping:
           crypted+=digitmapping[c]
-        #what if '+' or other
-        else:
-            raise ValueError
+
 
     return crypted[:origlen]
 
