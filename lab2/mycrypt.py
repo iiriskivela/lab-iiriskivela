@@ -15,10 +15,15 @@ def encode(s):
         if c.isalpha():
             if c.islower():
                 c=c.upper()
+                #missing for lower
+
             # Rot13 the character for maximum securityy
             crypted+=codecs.encode(c,'rot13')
         elif c in digitmapping:
           crypted+=digitmapping[c]
+        #what if '+' or other
+        else:
+            raise ValueError
 
     return crypted[:origlen]
 
