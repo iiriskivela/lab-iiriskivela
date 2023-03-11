@@ -20,7 +20,7 @@ def encode(s):
         elif c in digitmapping:
           crypted+=digitmapping[c]
 
-    return crypted
+    return crypted[:origlen]
 
 def decode(s):
     return s
