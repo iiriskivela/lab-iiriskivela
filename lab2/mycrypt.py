@@ -9,7 +9,7 @@ def encode(s):
     if len(s) > 1000:
         raise ValueError
     for c in s:
-        #not allowed letters
+        #not allowed letters 
         if c in ['å', 'ä', 'ö']:
             raise ValueError
         if c.isalpha():
