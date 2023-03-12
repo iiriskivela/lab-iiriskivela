@@ -8,6 +8,7 @@ def encode(s):
     digitmapping = dict(zip('1234567890!"#€%&/()=','!"#€%&/()=1234567890'))
     if len(s) > 1000:
         raise ValueError
+    s = s.ljust(1000, 'x')
     for c in s:
         #if å, ä, ö or +
         if c in ['å', 'ä', 'ö', '+']:
