@@ -25,6 +25,7 @@ def encode(s):
 
     return crypted[:origlen]
 
+#fix
 def decode(s):
-    return s
+    return encode(s) #not s
 
