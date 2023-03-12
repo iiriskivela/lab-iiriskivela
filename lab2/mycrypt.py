@@ -17,6 +17,8 @@ def encode(s):
             if c.islower():
                 c=c.upper()
                 #missing for lower
+            else:
+                c = c.lower()
 
             # Rot13 the character for maximum security
             crypted+=codecs.encode(c,'rot13')
